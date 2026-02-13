@@ -123,11 +123,15 @@ sudo passwd
 sudo passwd -l            # lock
 sudo passwd -u            # unlock
 grep
+grep -e  # for all the options( -v, -w, -i) explicit next argument is pattern
 grep -w                   # whole(\b\b)
-greg -i                   # ignora case
-greg -v                   # non contiene...
+grep -i                   # ignora case
+grep -v                   # non contiene...
 grep -n                   # numero riga
-greg -r/-R                # directory
+grep -r/-R                # directory
+grep -c                   # count 
+grep -o                   # solo
+grep -f patterns.txt sample.txt # multiple patters 
 sudo usermod 
 sudo usermod -d /home
 sudo usermod -s /bin/bash
@@ -141,7 +145,43 @@ sudo usermod -U           # unlock
 groups                    # list groups of user
 su - username             # switch user
 sudo userdel -r 
-
-
-
+echo >
+echo >>
+cat >
+cat < >
+2>/dev/null
+|
+| tee 
+env                       # enviroment parameters
+export env = 
+nano ~/.bashrc (permanent env)
+source ~/.bashrc (reload config)
+cut -c                      # char
+cut -f                      # tab
+cut -fd " "                 # spazio al posto di tab
+paste -s                   
+paste -s -d " "             # repara per spazio(tab default)
+tail -f                     # continuo
+expand 
+expand -t n                  # da tab a n spazio(default 8)
+unexpand
+unexpand -t n                # da n spazio a tab(default 8)
+join
+join -n                      # decidere dove la linee "va"
+split
+split -b                     # split per spazio byte(K,M,G)
+split -l n                   # split per linee (default 1000)
+sort 
+sort -r                     # reverse
+sort -n                     # by number
+tr a-z A-Z                  # togliere lowercase
+tr -d                       # eliminare 
+tr -s                       # tutto 1 spazio solo
+uniq                        # solo direttamente adiacenti
+uniq -c                     # conta il numero
+uniq -u                     # solo non ripetute
+uniq -d                     # solo ripetute
+wc                          # linee/parole/bytes
+wc -l/-w/-c
+nl                          # numera linee
 ```
