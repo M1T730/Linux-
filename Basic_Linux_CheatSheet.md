@@ -31,8 +31,8 @@ touch nome_file
 touch -r nome_file1 nome_file2
 touch -d "2026-02-13 00:42" nome_file
 cat nome_file
-cat -n
-cat -b
+cat -n                              # numeri tutte le righe
+cat -b                              # numeri righe non vuote
 cat > 
 echo "" > file.txt
 .hidden_file
@@ -77,26 +77,29 @@ less file.txt
 !!
 control-r
 history
-history -c
-history -w
-history -d
+history -c      # cancella cronologia
+history -w      # salva cronologia
+history -d      # elimina voce
 clear
-ls/cp *.txt
-ls/cp file?.txt
-ls/cp file[].txt
+ls/cp *.txt     # wildcard multipla
+ls/cp file?.txt # un carattere
+ls/cp file[].txt # set caratteri
 -i flag 
-cp -p 
+cp -p           # preserva attributi
 mv -t /somedirectory file_1 file_2
-mv -v
-mv -b
+mv -v           # verbose
+mv -b           # backup
 mkdir -p test/test1/test2/test3/test4
-file [path] [expression]
-file -type 
-file -name 
-file -maxdepth
-file -empty
-file -mtime +/-
-file -ipath 
+find [path] [expression]
+find -type 
+find -name 
+find -maxdepth (subdic)
+find -empty
+find -mtime +/- (giorni)
+find -ipath 
+find -user
+find -group 
+find -size 
 help
 --help
 alias name='command'
@@ -107,3 +110,38 @@ exit
 logout
 ```
 
+```bash
+sudo
+chown owner:group
+chown -r owner:group
+chmod 0-7(r=4,w=2,x=1)    # permessi numerici
+chmod (u/g/o)(+/-)(r/w/x) # permessi simbolic 
+ls -d 
+sudo useradd 
+sudo useradd -m           # crea user con home
+sudo passwd 
+sudo passwd -l            # lock
+sudo passwd -u            # unlock
+grep
+grep -w                   # whole(\b\b)
+greg -i                   # ignora case
+greg -v                   # non contiene...
+grep -n                   # numero riga
+greg -r/-R                # directory
+sudo usermod 
+sudo usermod -d /home
+sudo usermod -s /bin/bash
+sudo usermod -G           # sovrascrivere gruppo
+sudo usermod -aG          # aggiungere a gruppo
+sudo usermod -md          # directory muovendo file
+sudo usermod -l           # camb nome
+sudo usermod -u           # camb UID
+sudo usermod -L           # lock
+sudo usermod -U           # unlock 
+groups                    # list groups of user
+su - username             # switch user
+sudo userdel -r 
+
+
+
+```
