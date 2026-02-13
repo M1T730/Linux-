@@ -1,6 +1,4 @@
-
-
-# Day 1 Cheatsheet
+# Cheatsheet
 
 ## 1. Informazioni sul sistema e utente
 ```bash
@@ -23,11 +21,19 @@ ls -l
 cd nome_directory
 cd ..
 cd ~
+cd -
+cd .
 ```
 
 ## 3. Creazione e gestione file
 ```bash
 touch nome_file
+touch -r nome_file1 nome_file2
+touch -d "2026-02-13 00:42" nome_file
+cat nome_file
+cat -n
+cat -b
+cat > 
 echo "" > file.txt
 .hidden_file
 ```
@@ -58,3 +64,46 @@ rm -i file.txt
 rm -f file.txt
 rm -rf directory_name
 ```
+
+```bash
+head 
+head -n
+tail
+tail -n
+diff 
+diff -r
+file 
+less file.txt
+!!
+control-r
+history
+history -c
+history -w
+history -d
+clear
+ls/cp *.txt
+ls/cp file?.txt
+ls/cp file[].txt
+-i flag 
+cp -p 
+mv -t /somedirectory file_1 file_2
+mv -v
+mv -b
+mkdir -p test/test1/test2/test3/test4
+file [path] [expression]
+file -type 
+file -name 
+file -maxdepth
+file -empty
+file -mtime +/-
+file -ipath 
+help
+--help
+alias name='command'
+nano ~/.bashrc (permanent alias)
+source ~/.bashrc (reload config)
+unalias
+exit 
+logout
+```
+
