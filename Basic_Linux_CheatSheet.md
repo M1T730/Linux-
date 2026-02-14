@@ -1,69 +1,49 @@
 # Cheatsheet
 
-## 1. Informazioni sul sistema e utente
+
+d1: 
+
 ```bash
 whoami
 id
 id -un
 echo ~
-```
-
-## 2. Navigazione nel filesystem
-```bash
-
 pwd
 ls
 ls ~
 ls -r
 ls -a
 ls -R
-ls -l
+ls -l                       # -(type) ---(ownerperms)---(groupperms)---(otherperms) n(hardlinks) owner group N(bites) data(orario) file
 cd nome_directory
 cd ..
 cd ~
 cd -
 cd .
-```
-
-## 3. Creazione e gestione file
-```bash
-touch nome_file
-touch -r nome_file1 nome_file2
-touch -d "2026-02-13 00:42" nome_file
-cat nome_file
+touch nome_file.txt
+touch -r file1.txt file2.txt        # syncronizza timestamp
+touch -d "2026-02-13 00:42" nome_file.txt   # set timestamp
+cat nome_file.txt
 cat -n                              # numeri tutte le righe
 cat -b                              # numeri righe non vuote
-cat > 
-echo "" > file.txt
+cat > nome_file.txt                  # scrive da stdin
+echo "" > file.txt                   # svuota il file.txt
 .hidden_file
-```
-
-## 4. Creazione e gestione directory
-```bash
 mkdir nome_directory
 rmdir nome_directory
-rm -r nome_directory
-```
-
-## 5. Copia file e directory
-```bash
-cp nome_file nome_copia
+rmdir -r nome_directory
+cp nome_file.txt copia.txt
 cp -r directory copy_directory
-```
-## 6. Spostamento e rinomina
-```bash
 mv file_name.txt new_name.txt
 mv file.txt directory_name
 mv directory_name new_directory
+rm file.txt
+rm -i file.txt                       # chiedi conferma
+rm -f file.txt                       # forza cancellazione
+rm -rf directory_name                 # cancella ricorsivamente
 ```
 
-## 7. Rimozione file
-```bash
-rm file.txt
-rm -i file.txt
-rm -f file.txt
-rm -rf directory_name
-```
+d2:
 
 ```bash
 head 
@@ -79,7 +59,7 @@ control-r
 history
 history -c      # cancella cronologia
 history -w      # salva cronologia
-history -d      # elimina voce
+history -d    # elimina voce
 clear
 ls/cp *.txt     # wildcard multipla
 ls/cp file?.txt # un carattere
@@ -110,6 +90,8 @@ exit
 logout
 ```
 
+d3:
+
 ```bash
 sudo
 chown owner:group
@@ -119,6 +101,7 @@ chmod (u/g/o)(+/-)(r/w/x) # permessi simbolic
 ls -d 
 sudo useradd 
 sudo useradd -m           # crea user con home
+sudo grep -w '' /etc/passwd     # username/password(nascostoIn/etc/shadow)/UID/GID/homedir/shell
 sudo passwd 
 sudo passwd -l            # lock
 sudo passwd -u            # unlock
@@ -149,7 +132,7 @@ echo >
 echo >>
 cat >
 cat < >
-2>/dev/null
+2>/dev/null                 # molto comodo per cestinare errs
 |
 | tee 
 env                       # enviroment parameters
@@ -185,3 +168,23 @@ wc                          # linee/parole/bytes
 wc -l/-w/-c
 nl                          # numera linee
 ```
+https://overthewire.org/wargames/bandit/bandit10.html
+bandit level 9 ora, passwd: 4CKMh1JI91bUIZZPXDqGanal4xvAg0JM
+
+d4:
+
+```bash
+sudo passwd -S              # username/status/data/mindays/maxdays/expireddays/accdisactivetionday
+grep -E '^(joker|batman):'  # più oggetti 
+uname                       # nome sistema
+uname -a                    # kernel/hostname/versione/buildN/multicoresupport/data/compilazione/cpuArch/kernelArch/SO
+uptime                      # oracorrente/tempodiattività/utentiloggati/loadaverage
+top (fondamentale)          # processi attivi in tempo reale principali: PID/user/memoria/cpu/tempo/comando
+ls -F                       # aggiungere carattere speciale in base al file: (dic(/),sh(*),socker(=))
+tar -czf archive.tar.gz file1 file1 # create new archive/compress archive using gzip/specify filename
+who             # username/terminale/logintime/ip spesso usato spesso insieme a uptime, chi è loggato?
+w               # uptime/username/terminale/ip/orariologin/idle/cpuSessione/cpuProcesso/cosa sta facendo?(bash/top ecc..) 
+regex: . * + ? [] [^] () ‘ ^ $
+```
+
+
