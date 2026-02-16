@@ -205,4 +205,17 @@ umask                       # temporaneamente cambiare permessi dei prossimi fil
 ps                          # PID/TTY/STAT/TIME/CMD
 ps a u x                    # all processes for all users/ detailes/ processes not attached to terminal(daemons)
 ps -ef                      # every process on system , full format: (UID,PID,PPID,C,STIME)
+```
+
+d6:
 ```bash
+ls -lh
+ls -t                       # sort by modification time 
+ls -S                       # sort by file size 
+ls -X                       # alphabet and file extention 
+ls -v                       # per version
+ls -lhSr                    # long/human readable/size/reverse       
+ls --color=never/always/auto 
+pwd -L                      # logical
+pwd -P                      # physical
+```
