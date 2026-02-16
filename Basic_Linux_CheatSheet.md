@@ -98,7 +98,7 @@ chown owner:group
 chown -r owner:group
 chmod 0-7(r=4,w=2,x=1)    # permessi numerici
 chmod (u/g/o)(+/-)(r/w/x) # permessi simbolic 
-ls -d 
+ls -d                      # list dir
 sudo useradd 
 sudo useradd -m           # crea user con home
 sudo grep -w '' /etc/passwd     # username/password(nascostoIn/etc/shadow)/UID/GID/homedir/shell
@@ -187,4 +187,22 @@ w               # uptime/username/terminale/ip/orariologin/idle/cpuSessione/cpuP
 regex: . * + ? [] [^] () ‘ ^ $
 ```
 
+bandit level 13 ora, passwd: FO5dwFsc0cbaIiH0h8J2eUks2vdTDwAn
 
+d5:
+```bash
+tar -xf                    # decompress
+gunzip
+bunzip
+sudo chmod -g+s / 2xxx       #set group id(SGID)
+sudo chmod -u+s / 4xxx       #set user id(SUID)
+sudo chmod +t / 1xxx  dir      #set sticky bit
+dmesg                       # view kernel messages
+visudo                      # best practice to change /etc/sudoers
+sudo chgrp                  # cambiare  gruppo di un file
+sudo chown user:group 
+umask                       # temporaneamente cambiare permessi dei prossimi file creati (funziona al crontrario di chmod)
+ps                          # PID/TTY/STAT/TIME/CMD
+ps a u x                    # all processes for all users/ detailes/ processes not attached to terminal(daemons)
+ps -ef                      # every process on system , full format: (UID,PID,PPID,C,STIME)
+```bash
