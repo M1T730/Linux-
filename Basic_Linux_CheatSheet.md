@@ -179,7 +179,7 @@ grep -E '^(joker|batman):'  # più oggetti
 uname                       # nome sistema
 uname -a                    # kernel/hostname/versione/buildN/multicoresupport/data/compilazione/cpuArch/kernelArch/SO
 uptime                      # oracorrente/tempodiattività/utentiloggati/loadaverage
-top (fondamentale)          # processi attivi in tempo reale principali: PID/user/memoria/cpu/tempo/comando
+top (fondamentale)          # processi attivi in tempo reale principali: PID/user/memoria/cpu/tempo/comando/niceness
 ls -F                       # aggiungere carattere speciale in base al file: (dic(/),sh(*),socker(=))
 tar -czf archive.tar.gz file1 file1 # create new archive/compress archive using gzip/specify filename
 who             # username/terminale/logintime/ip spesso usato spesso insieme a uptime, chi è loggato?
@@ -191,7 +191,9 @@ bandit level 13 ora, passwd: FO5dwFsc0cbaIiH0h8J2eUks2vdTDwAn
 
 d5:
 ```bash
-tar -xf                    # decompress
+tar -xf                    # extract from archive
+gzip
+bzip
 gunzip
 bunzip
 sudo chmod -g+s / 2xxx       #set group id(SGID)
@@ -218,4 +220,40 @@ ls -lhSr                    # long/human readable/size/reverse
 ls --color=never/always/auto 
 pwd -L                      # logical
 pwd -P                      # physical
+ps l                        # long (non può andare insieme a "u")
+```
+
+
+d7: 
+```bash
+CTRL C
+CTRL Z
+kill 
+kill -9
+kill -SIGSTOP
+kill -SIGCONT
+kill -SIGHUP
+kill -l
+nice -n 5 command        # starts process(command) with niceness of 5 
+renice 10 -p PID         # cambiare il niceness di un programma già esistente
+ls /proc                # PID / and system hardware information.
+cat /proc/PID/status 
+sleep 1000 &            # starts backgroup process (1000secs) 
+job                     # lists backgroup processes(jobID/status/command)
+fg                     # foreground most recent job
+fg %job ID             # bring backgroup process into foreground
+bg                      # bring backt o background, used with CTRL Z (no stops required)
+kill &job ID /PID       # terminate bg job
+apt sources list        # primary configuration of packet repos
+/etc/apt/source.list.d    # PM checks this to know updates and software 
+dpkg 
+rpm
+dpkg  -i                # install package but not dependencies
+rmp -i                   # install package but not dependencies
+dpkg -r
+rmp -e              # eliminate
+dpkg -l
+rmp -qa             #query all 
+apt install/remove/update+upgrade/show         
+yum install/erase/update/info
 ```
