@@ -1,4 +1,4 @@
-# Cheatsheet
+# Linux Cheatsheet
 
 
 d1: 
@@ -203,7 +203,7 @@ dmesg                       # view kernel messages
 visudo                      # best practice to change /etc/sudoers
 sudo chgrp                  # cambiare  gruppo di un file
 sudo chown user:group 
-umask                       # temporaneamente cambiare permessi dei prossimi file creati (funziona al crontrario di chmod)
+umask                       # temporaneamente cambiare permessi dei prossimi file creati (funziona al crontrario di chmod)(solo togliere)
 ps                          # PID/TTY/STAT/TIME/CMD
 ps a u x                    # all processes for all users/ detailes/ processes not attached to terminal(daemons)
 ps -ef                      # every process on system , full format: (UID,PID,PPID,C,STIME)
@@ -256,4 +256,16 @@ dpkg -l
 rmp -qa             #query all 
 apt install/remove/update+upgrade/show         
 yum install/erase/update/info
+```
+
+
+d8:
+```bash
+lsusb
+lsusb -t            #tree 
+lspci               # peripheral component interconnct, devices connected to mb
+lsscsi              # SCSI and SATA devices, harddrives,SSDs, optical drivers
+dd                  # really carefull with this
+dd if= of= bs= count=   # input file/ output file/ bytes/ counts
+
 ```
