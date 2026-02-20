@@ -267,5 +267,36 @@ lspci               # peripheral component interconnct, devices connected to mb
 lsscsi              # SCSI and SATA devices, harddrives,SSDs, optical drivers
 dd                  # really carefull with this
 dd if= of= bs= count=   # input file/ output file/ bytes/ counts
-
 ```
+
+d9:
+```bash
+df                                  # disk free (block space)
+df -h                               # human readable
+df -T                              # show filesystem type 
+sudo parted -l                      # list partitions and show partition table 
+gdisk
+sudo parted                         # parted tool's shell 
+            select /dev/sdb         
+                            print   # print partition table of device
+                            mkpart primary ext4 1MB 5000MB      # make partition / partition type/ filesystem type/ start / end
+                            resizepart 1 8000MB                 # number of part, new end
+sudo mkfs -f ext4 /dev/sdb2           # make filesystem in new partition, -f(specify file system type) path
+sudo mount -t ext4 /dev/sdb2 /mydrive       # mount / filesystem type / device path / mount point
+sudo mount UUID= /mydrive                   #universally unique ID to keep names consistent during reboots
+blkid                                       # show UUID per device and sf type
+sudo unmount path/mount point               # either 1 or another
+cat /etc/fstab                              # UUID/mount point/fs type/options/dump/pass
+sudo mount -a                               # test modified /etc/fstab
+mkswap path                                 # ensure partition has nothing inside
+swapon path
+swapoff path 
+df -i                                       # check inode usage
+du
+du -h path                                        # disk usage h readable(default is /)
+sudo fsck path                                  #full filesystem check ( run only when necessary)
+ls -li                                          # view inodes numbers
+stat                                            # detailed information about a file
+ln -s /path/to/original /path/to/link           # symbolic link
+ln /path/to/original /path/to/link              # hard link
+``` 
