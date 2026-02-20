@@ -300,3 +300,13 @@ stat                                            # detailed information about a f
 ln -s /path/to/original /path/to/link           # symbolic link
 ln /path/to/original /path/to/link              # hard link
 ``` 
+
+d10:
+```bash
+su vs su - 
+sudo chage -l user                             # preferisco sudo passwd -S user
+sudo chage -M days
+sudo chage -m days
+sudo chage -W days                             # expire
+sudo group add 
+``` 
