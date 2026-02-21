@@ -310,3 +310,14 @@ sudo chage -m days
 sudo chage -W days                             # expire
 sudo group add 
 ``` 
+
+d11: 
+```bash
+strace command                          # observe syscalls 
+uname 
+sudo modprobe module                   # load kernel module
+sudo modprobe -r module                # unload 
+set -o                                  # list shell optionts
+set -o option_name                      # enable shell option like exportall
+
+```
