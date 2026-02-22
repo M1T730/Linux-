@@ -319,5 +319,28 @@ sudo modprobe module                   # load kernel module
 sudo modprobe -r module                # unload 
 set -o                                  # list shell optionts
 set -o option_name                      # enable shell option like exportall
-
+```
+d12: 
+```bash
+date
+tee -a     
+service --status-all                    # list available and status services       
+sudo service service_name start      
+sudo service service_name stop                  
+sudo service service_name restart       
+initctl list                    #job name/ goal/ status                                 # dont work with systemd
+initctl status job_name                     # dont work with systemd
+sudo initctl start job_name                     # dont work with systemd
+sudo initctl stop job_name                     # dont work with systemd
+sudo initctl restart job_name                     # dont work with systemd     
+sudo initctl emit event_name                        # dont work with systemd
+systemctl list-units
+systemctl status unit.type          # loaded? active? Docs/Logs
+sudo systemctl start unit.type
+sudo systemctl stop unit.type       
+sudo systemctl restart unit.type
+sudo systemctl enable unit.type             # automatically run at boot(symbolic link to boot)
+sudo systemctl disable unit.type            # does not automatically run at boot(symbolic link to boot)
+sudo shutdown -h +minutes/now  (poweroff/halt)          # power off
+sudo shutdown -r +minutes/now  (reboot)        # restart 
 ```
