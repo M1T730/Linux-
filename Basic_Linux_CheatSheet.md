@@ -344,3 +344,20 @@ sudo systemctl disable unit.type            # does not automatically run at boot
 sudo shutdown -h +minutes/now  (poweroff/halt)          # power off
 sudo shutdown -r +minutes/now  (reboot)        # restart 
 ```
+
+d12: 
+```bash
+top -p pid 
+lsof .                  # list open files 
+fuser -v 
+fuser -k mount_point    # kill process running a resouce 
+iostat                  # cpu and disk 
+vmstat                  # processes/memory/paging/block i-o/traps/cpu activity
+pidstat 
+sar -q                  # detailed list
+sar -r                  # memory
+sar -p                  # cpu
+crontab -l              # list all cron jobs
+crontab -e              # edit
+crontab -r              # remove all jobs
+```
