@@ -361,3 +361,12 @@ crontab -l              # list all cron jobs
 crontab -e              # edit
 crontab -r              # remove all jobs
 ```
+
+
+d13:
+```bash
+logger 
+logger -s 
+dmesg
+
+```
