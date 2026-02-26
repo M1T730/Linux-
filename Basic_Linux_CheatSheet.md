@@ -368,5 +368,17 @@ d13:
 logger 
 logger -s 
 dmesg
+```
 
+d15: 
+```bash
+scp [option] [sender_path][reciever_path]
+scp -r 
+rsync -v
+rsync -r
+rsync -z                # zip
+rsync -h
+rsync -a                # rlptgoD shortcut (permissions, ownership, timestamp)
+sudo service nfsclient start
+sudo mount server:/directory /mount directory
 ```
