@@ -382,3 +382,14 @@ rsync -a                # rlptgoD shortcut (permissions, ownership, timestamp)
 sudo service nfsclient start
 sudo mount server:/directory /mount directory
 ```
+
+
+Networking:
+
+```bash
+ifconfig -a
+ip addr show
+ping
+nslookup
+traceroute
+```
