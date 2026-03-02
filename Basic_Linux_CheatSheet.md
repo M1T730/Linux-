@@ -122,7 +122,7 @@ sudo usermod -G           # sovrascrivere gruppo
 sudo usermod -aG          # aggiungere a gruppo
 sudo usermod -md          # directory muovendo file
 sudo usermod -l           # camb nome
-sudo usermod -u           # camb UID
+sudo usermod -u           # camb UID 
 sudo usermod -L           # lock
 sudo usermod -U           # unlock 
 groups                    # list groups of user
@@ -390,6 +390,9 @@ Networking:
 ifconfig -a
 ip addr show
 ping
+ping6
 nslookup
 traceroute
+traceroute6
+dig
 ```
