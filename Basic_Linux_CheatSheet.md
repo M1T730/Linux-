@@ -182,6 +182,7 @@ uptime                      # oracorrente/tempodiattività/utentiloggati/loadave
 top (fondamentale)          # processi attivi in tempo reale principali: PID/user/memoria/cpu/tempo/comando/niceness
 ls -F                       # aggiungere carattere speciale in base al file: (dic(/),sh(*),socker(=))
 tar -czf archive.tar.gz file1 file1 # create new archive/compress archive using gzip/specify filename
+tar -zcvf 
 who             # username/terminale/logintime/ip spesso usato spesso insieme a uptime, chi è loggato?
 w               # uptime/username/terminale/ip/orariologin/idle/cpuSessione/cpuProcesso/cosa sta facendo?(bash/top ecc..) 
 regex: . * + ? [] [^] () ‘ ^ $
@@ -383,11 +384,21 @@ sudo service nfsclient start
 sudo mount server:/directory /mount directory
 ```
 
+Linux Bibke book 
+```bash
+hostname
+hostinfo
+date
+
+```
+
 
 Networking:
 
 ```bash
-ifconfig -a
+ifconfig -a        # legacy
+ifup                # legacy
+ifdown             # legacy
 ip addr show
 ping
 ping6
@@ -395,4 +406,12 @@ nslookup
 traceroute
 traceroute6
 dig
+route
+ip link show
+ip -s link show eth0
+ip adress show
+ip link set eth0 down
+ip link set eth0 up
+nmcli
+ip neighbour show 
 ```
