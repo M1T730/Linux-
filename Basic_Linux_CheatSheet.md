@@ -401,6 +401,7 @@ ifup                # legacy
 ifdown             # legacy
 ip addr show
 ping
+ping -c
 ping6
 nslookup
 traceroute
@@ -414,4 +415,7 @@ ip link set eth0 down
 ip link set eth0 up
 nmcli
 ip neighbour show 
+netstat
+netstat -at             # all / filter for tcp 
+tcpdump                 # packet analysis tool, complementary with wireshark
 ```
