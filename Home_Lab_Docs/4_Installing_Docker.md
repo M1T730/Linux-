@@ -5,7 +5,9 @@ installing docker following: *https://knowledgebase.code-de.org/en/latest/cloud/
 
 **step 2:**
 install docker compose: 
-*sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin*
+```bash
+sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+```bash
 
 **update_afterstage5:**
 redone this process in an Linux VM on top of Proxmox 
