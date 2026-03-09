@@ -45,3 +45,7 @@ services:
 docker compose up -d 
 docker compose ls
 ```
+
+
+**update:**
+addedd uptime kuma and home assistant as well, not in media server but in their own directories.

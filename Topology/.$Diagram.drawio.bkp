@@ -1,0 +1,90 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.1 Chrome/142.0.7444.265 Electron/39.8.0 Safari/537.36" version="29.6.1">
+  <diagram name="Pagina-1" id="QbJBY6xQIgcDueMJbyug">
+    <mxGraphModel dx="941" dy="1969" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="4e-Ilo8NCC-ElHgTxIFe-2" parent="1" style="swimlane;whiteSpace=wrap;html=1;dashed=1;dashPattern=1 4;fontStyle=1;fontSize=14;verticalAlign=top;align=left;spacingLeft=10;labelBackgroundColor=none;fillColor=#6a00ff;fontColor=#ffffff;strokeColor=#3700CC;" value="Proxmox Host" vertex="1">
+          <mxGeometry height="860" width="760" x="250" y="100" as="geometry">
+            <mxRectangle height="30" width="140" x="100" y="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4e-Ilo8NCC-ElHgTxIFe-3" parent="4e-Ilo8NCC-ElHgTxIFe-2" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fa6800;strokeColor=#C73500;fontStyle=1;fontColor=#FFFFFF;" value="Virtual Bridge (vmbr1)" vertex="1">
+          <mxGeometry height="40" width="640" x="80" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="4e-Ilo8NCC-ElHgTxIFe-4" parent="4e-Ilo8NCC-ElHgTxIFe-2" style="swimlane;whiteSpace=wrap;html=1;fillColor=#0050ef;strokeColor=#001DBC;fontStyle=1;startSize=30;labelBackgroundColor=none;fontColor=#ffffff;" value="LXC Container (Samba NAS)" vertex="1">
+          <mxGeometry height="200" width="240" x="60" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="4e-Ilo8NCC-ElHgTxIFe-5" parent="4e-Ilo8NCC-ElHgTxIFe-4" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#0050ef;strokeColor=#001DBC;fontColor=#ffffff;" value="Music Files" vertex="1">
+          <mxGeometry height="80" width="120" x="60" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="4e-Ilo8NCC-ElHgTxIFe-6" parent="4e-Ilo8NCC-ElHgTxIFe-2" style="swimlane;whiteSpace=wrap;html=1;fillColor=#d80073;strokeColor=#A50040;fontStyle=1;startSize=30;fontColor=#ffffff;" value="Ubuntu VM" vertex="1">
+          <mxGeometry height="520" width="340" x="350" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="4e-Ilo8NCC-ElHgTxIFe-7" parent="4e-Ilo8NCC-ElHgTxIFe-6" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#a20025;strokeColor=#6F0000;fontColor=#ffffff;" value="Tailscale" vertex="1">
+          <mxGeometry height="40" width="120" x="20" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="4e-Ilo8NCC-ElHgTxIFe-8" parent="4e-Ilo8NCC-ElHgTxIFe-6" style="swimlane;whiteSpace=wrap;html=1;dashed=1;fillColor=#1ba1e2;strokeColor=#006EAF;fontStyle=2;startSize=30;fontColor=#ffffff;" value="Docker Engine" vertex="1">
+          <mxGeometry height="380" width="300" x="20" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="4e-Ilo8NCC-ElHgTxIFe-9" parent="4e-Ilo8NCC-ElHgTxIFe-8" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0050ef;strokeColor=#001DBC;fontColor=#ffffff;" value="Navidrome (Port 4533)" vertex="1">
+          <mxGeometry height="80" width="240" x="30" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="4e-Ilo8NCC-ElHgTxIFe-10" parent="4e-Ilo8NCC-ElHgTxIFe-8" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0050ef;strokeColor=#001DBC;fontColor=#ffffff;" value="Jellyfin (Port 8096)" vertex="1">
+          <mxGeometry height="80" width="240" x="30" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="4e-Ilo8NCC-ElHgTxIFe-11" parent="4e-Ilo8NCC-ElHgTxIFe-8" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0050ef;strokeColor=#001DBC;fontColor=#ffffff;" value="Home Assistant (Port 8123)" vertex="1">
+          <mxGeometry height="80" width="240" x="30" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="4e-Ilo8NCC-ElHgTxIFe-12" edge="1" parent="4e-Ilo8NCC-ElHgTxIFe-2" source="4e-Ilo8NCC-ElHgTxIFe-4" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.156;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;" target="4e-Ilo8NCC-ElHgTxIFe-3" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry" />
+        </mxCell>
+        <mxCell id="4e-Ilo8NCC-ElHgTxIFe-13" edge="1" parent="4e-Ilo8NCC-ElHgTxIFe-2" style="endArrow=none;html=1;rounded=0;entryX=0.672;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;" target="4e-Ilo8NCC-ElHgTxIFe-3" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="510" y="330" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4e-Ilo8NCC-ElHgTxIFe-14" edge="1" parent="4e-Ilo8NCC-ElHgTxIFe-2" source="4e-Ilo8NCC-ElHgTxIFe-5" style="endArrow=classic;html=1;rounded=0;dashed=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;labelBackgroundColor=#ffffff;" target="4e-Ilo8NCC-ElHgTxIFe-6" value="SMB Mount">
+          <mxGeometry height="50" relative="1" width="50" as="geometry" />
+        </mxCell>
+        <mxCell id="4e-Ilo8NCC-ElHgTxIFe-15" edge="1" parent="4e-Ilo8NCC-ElHgTxIFe-2" source="4e-Ilo8NCC-ElHgTxIFe-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="4e-Ilo8NCC-ElHgTxIFe-18" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="4e-Ilo8NCC-ElHgTxIFe-16" parent="4e-Ilo8NCC-ElHgTxIFe-2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fa6800;strokeColor=#C73500;fontStyle=1;labelBackgroundColor=none;fontColor=#FFFFFF;" value="vmbr0" vertex="1">
+          <mxGeometry height="60" width="120" x="293" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="4e-Ilo8NCC-ElHgTxIFe-17" edge="1" parent="4e-Ilo8NCC-ElHgTxIFe-2" source="4e-Ilo8NCC-ElHgTxIFe-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="352" y="210" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4e-Ilo8NCC-ElHgTxIFe-18" parent="4e-Ilo8NCC-ElHgTxIFe-2" style="whiteSpace=wrap;html=1;rounded=1;fontStyle=1;" value="PROXMOX HOST" vertex="1">
+          <mxGeometry height="120" width="197" x="493" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="4e-Ilo8NCC-ElHgTxIFe-19" parent="1" style="shape=mxgraph.cisco.routers.router;whiteSpace=wrap;html=1;fillColor=#008a00;fontColor=#ffffff;strokeColor=#005700;fontStyle=1;labelPosition=center;verticalLabelPosition=top;align=center;verticalAlign=bottom;" value="ISP&#39;S ROUTER" vertex="1">
+          <mxGeometry height="80" width="100" x="553" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="4e-Ilo8NCC-ElHgTxIFe-20" edge="1" parent="1" source="4e-Ilo8NCC-ElHgTxIFe-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;" target="4e-Ilo8NCC-ElHgTxIFe-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="4e-Ilo8NCC-ElHgTxIFe-21" parent="1" style="rounded=0;whiteSpace=wrap;html=1;labelPosition=center;verticalLabelPosition=top;align=center;verticalAlign=bottom;" value="External Device" vertex="1">
+          <mxGeometry height="60" width="90" x="1030" y="480" as="geometry" />
+        </mxCell>
+        <mxCell id="4e-Ilo8NCC-ElHgTxIFe-22" edge="1" parent="1" source="4e-Ilo8NCC-ElHgTxIFe-7" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1030" y="510" />
+            </Array>
+            <mxPoint x="740" y="510" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4e-Ilo8NCC-ElHgTxIFe-23" edge="1" parent="1" source="4e-Ilo8NCC-ElHgTxIFe-24" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="4e-Ilo8NCC-ElHgTxIFe-21" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="4e-Ilo8NCC-ElHgTxIFe-24" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" value="Actor" vertex="1">
+          <mxGeometry height="60" width="30" x="1110" y="340" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
