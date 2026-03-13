@@ -384,15 +384,6 @@ sudo service nfsclient start
 sudo mount server:/directory /mount directory
 ```
 
-Linux Bibke book 
-```bash
-hostname
-hostinfo
-date
-
-```
-
-
 Networking:
 
 ```bash
@@ -419,3 +410,15 @@ netstat
 netstat -at             # all / filter for tcp 
 tcpdump                 # packet analysis tool, complementary with wireshark
 ```
+
+
+Linux Bibke book 
+```bash
+hostname
+hostinfo
+date
+locate                  # limited(/etc/updatedb.conf)
+locate -i               # case insensitivity
+```
+
+
