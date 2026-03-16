@@ -21,6 +21,8 @@ ssh-copy-id -i path_to_public_key user@server_ip
 
 **step 4** 
 disable ssh connection via password modifying */etc/ssh/ssh.config* , setting *no* to *PasswordAuthentication*
+restart to apply changes: 
+sudo systemctl restart sshd
 
 **step 5** (optional)
 creating envs for username and server_ip in client, 
