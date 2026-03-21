@@ -412,13 +412,15 @@ tcpdump                 # packet analysis tool, complementary with wireshark
 ```
 
 
-Linux Bibke book 
+Linux Bible book 
 ```bash
 hostname
 hostinfo
 date
 locate                  # limited(/etc/updatedb.conf)
 locate -i               # case insensitivity
+ps -e
+killall name
 ```
 
 

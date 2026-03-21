@@ -17,3 +17,8 @@ install Fail2Ban, set up base config, set up proxmox jail rule, set up filter jo
 **result** 
 I've done the basic security for my home lab, need improvement, it will be done later
 *reminder*: create a security file to write every rule you've implemented, to keep track of your own security choises
+
+**update**
+permitting fowarding to internal nat. (foward)
+enable tailscale to reach and send packages (allow in/allow out)
+allowed port 41614 udp for taulscale
