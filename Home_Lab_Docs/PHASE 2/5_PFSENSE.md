@@ -9,7 +9,7 @@ port 4: VLAN 10 20                                                 PVID: 20
 port 5: VLAN 10 20                                                 PVID: 20
 port 6: VLAN 10 20                                                 PVID: 20
 port 7: VLAN 10 20                                                 PVID: 20
-port 8: VLAN 10 100(WAN) trunk vlan 10 and 100                     PVID: 20
+port 8: VLAN 10 100(WAN) 20 trunk vlan 10, 20 and  100                     PVID: 20
 
 **step 1:**
 For now I've disconnected all 3 devices ( 2 nodes and my personal laptop) from internet and connected them to the switch via ethernet, *temporaly* on respectively port 3,4,5 ( all VLAN 10). 

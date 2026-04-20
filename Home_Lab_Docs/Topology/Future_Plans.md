@@ -1,10 +1,5 @@
 # Future plans:
 
-*logging and monitoring:*
-* Prometheus
-* Grafana
-* rsyslog
-
 *networking*:
 * BIND (dns server)
 * DHCP server
