@@ -8,5 +8,5 @@
 * mail server
 * PXE server 
 * NFS server
-* Directory server
+* Directory server + kerberos
 * NTP server
