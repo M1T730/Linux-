@@ -2,7 +2,6 @@
 
 *networking*:
 * BIND (dns server)
-* DHCP server
 
 *other servers*:
 * mail server
