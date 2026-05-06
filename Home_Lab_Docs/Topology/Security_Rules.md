@@ -1,4 +1,6 @@
-# UFW: 
+# UFW:
+
+# THESE RULE ARE NOT UPDATED NOR ACTIVE RIGHT NOW; I NEED TO REWRITE THIS
 
 **Node 1:**
 To                         Action      From
