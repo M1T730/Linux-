@@ -15,7 +15,6 @@ port 8: VLAN 10 100(WAN) 20 trunk vlan 10, 20 and  100                     PVID:
 For now I've disconnected all 3 devices ( 2 nodes and my personal laptop) from internet and connected them to the switch via ethernet, *temporaly* on respectively port 3,4,5 ( all VLAN 10). 
 *temporaly* created a static routing rule to foward 10.10.10.0/24 traffic to 192.168.1.37(node 1) and 10.20.20.0/24 to 192.168.1.38(node 2)
 to access music and pfsense VM to configure it properly.  (sudo route -n 10.10.10.0 192.168.1.37) or directly (sudo route -n add -net 10.10.10.0/24 -interface en9) used this command instead of the previous one because if I have both wifi and ethernet connected to the mac, the default gateway of the mac is the home router, but i need it to be the switch to access the nodes. 
-
 *Reminder* remove the static routing rule once pfsense is configured: sudo route delete 10.10.10.0
 
 for now commands run on mac: 
