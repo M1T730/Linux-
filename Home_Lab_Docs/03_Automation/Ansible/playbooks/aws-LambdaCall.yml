@@ -1,0 +1,27 @@
+---
+- name: Configure Out-of-Band AWS heartbeat
+  hosts: all
+  become: true
+
+
+  vars_files:
+    - ../vars.yml
+
+  tasks:
+
+    - name: Create AWS heartbeat script
+      copy:
+        dest: /usr/local/bin/aws-heartbeat.sh
+        mode: '0755'
+        content: |
+          #!/bin/bash
+
+          host=$(hostname)
+
+          /usr/bin/curl -s "{{ heartbeat_lambda_url }}?host=$host" > /dev/null
+
+    - name: Add heartbeat cron
+      cron:
+        name: "AWS heartbeat"
+        minute: "*"
+        job: "/usr/local/bin/aws-heartbeat.sh"
