@@ -9,19 +9,59 @@
 
   tasks:
 
+    - name: Create heartbeat user
+      user:
+        name: heartbeat
+        shell: /bin/bash
+        create_home: true
+        system: true
+    
+    - name: Create heartbeat config directory
+      file:
+        path: /home/heartbeat/.heartbeat/
+        state: directory
+        owner: heartbeat
+        group: heartbeat
+        mode: '0700'
+
+    - name: Create heartbeat token file
+      copy:
+        dest: /home/heartbeat/.heartbeat/token
+        owner: heartbeat
+        group: heartbeat
+        mode: '0600'
+        content: "{{ heartbeat_token }}"
+
+    - name: Create heartbeat config file
+      copy:
+        dest: /home/heartbeat/.heartbeat/config
+        owner: heartbeat
+        group: heartbeat
+        mode: '0600'
+        content: |
+          LAMBDA_URL="{{ heartbeat_lambda_url }}"
+
     - name: Create AWS heartbeat script
       copy:
         dest: /usr/local/bin/aws-heartbeat.sh
+        owner: root
+        group: root
         mode: '0755'
         content: |
           #!/bin/bash
 
+          source /home/heartbeat/.heartbeat/config
           host=$(hostname)
+          IFS= read -r token < /home/heartbeat/.heartbeat/token
 
-          /usr/bin/curl -s "{{ heartbeat_lambda_url }}?host=$host" > /dev/null
+          /usr/bin/curl -fsS -K- <<EOF
+          url = "${LAMBDA_URL}?host=${host}"
+          header = "Authorization: Bearer ${token}"
+          EOF
 
     - name: Add heartbeat cron
       cron:
         name: "AWS heartbeat"
+        user: heartbeat
         minute: "*"
         job: "/usr/local/bin/aws-heartbeat.sh"
