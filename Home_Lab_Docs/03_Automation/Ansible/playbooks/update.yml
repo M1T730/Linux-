@@ -8,3 +8,7 @@
       apt:
         update_cache: true
         upgrade: dist
+
+
+# runs Wednesday 20:00 in the macbook cronjob: 
+# 0 20 * * 3 a/opt/homebrew/bin/ansible-playbook -i /Users/utente/Documents/GitHub/Linux-/Home_Lab_Docs/03_Automation/Ansible/inventory/hosts.ini /Users/utente/Documents/GitHub/Linux-/Home_Lab_Docs/03_Automation/Ansible/playbooks/update.yml

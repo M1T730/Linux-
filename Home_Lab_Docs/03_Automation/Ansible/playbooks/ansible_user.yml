@@ -1,0 +1,51 @@
+---
+- name: ansible user on all hosts 
+  hosts: all
+  become: true
+
+  vars_files:
+    - ../vars.yml
+
+  tasks: 
+    - name: Create ansible user
+      user: 
+        name: "{{ ansi_user }}"
+        shell: /bin/bash
+        create_home: true
+        state: present 
+      
+    - name: Add ansible user to sudoers
+      user: 
+        name: "{{ ansi_user }}"
+        groups: sudo
+        append: true
+
+    - name: Allow passwordless sudo for ansible user
+      copy:
+        dest: /etc/sudoers.d/{{ ansi_user }}
+        content: "{{ ansi_user }} ALL=(ALL) NOPASSWD:ALL"
+        mode: '0440'
+        validate: '/usr/sbin/visudo -cf %s'
+
+    - name: Create .ssh directory for ansible user
+      file:
+        path: "/home/{{ ansi_user }}/.ssh"
+        state: directory
+        owner: "{{ ansi_user }}"
+        group: "{{ ansi_user }}" 
+        mode : '0700'
+
+    - name: Install authorized key for ansible user
+      authorized_key:
+        user: "{{ ansi_user }}"
+        key: "{{ ansi_pubkey }}"
+        state: present
+    
+    - name: Ensure correct ownership of ansible user's home directory
+      file:
+        path: "/home/{{ ansi_user }}"
+        state: directory
+        owner: "{{ ansi_user }}"
+        group: "{{ ansi_user }}" 
+        recurse: true
+    

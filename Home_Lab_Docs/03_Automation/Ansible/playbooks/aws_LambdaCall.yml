@@ -5,7 +5,7 @@
 
 
   vars_files:
-    - ../vars.yml
+    - ../vault.yml
 
   tasks:
 
