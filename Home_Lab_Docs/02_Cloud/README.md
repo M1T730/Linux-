@@ -1,6 +1,6 @@
 **AZURE**: The Objective is to Delegate All the Identity management to Azure, so Entra ID as the primal source of Identity, supported by the on-premises AD DC.
 
-**AWS**: The Objective is to have AWS use ENTRA ID authentication and authorization, then AWS is particular will be used to backup data and configs into S3 standard storage while VMx/LXCs images will be placed in the S3 Glacier Deep Archive; furthermore I would like to implement an Out-of-Band availability check, with a combination of CloudWatch, SNS and Lambda.
+**AWS**: The Objective is to have AWS use ENTRA ID authentication and authorization, then AWS in particular will be used to backup data and configs into S3 standard storage while VMx/LXCs images will be placed in the S3 Glacier Deep Archive; furthermore I would like to implement an Out-of-Band availability check, with a combination of CloudWatch, SNS and Lambda.
 
 IN DETAIL: 
 

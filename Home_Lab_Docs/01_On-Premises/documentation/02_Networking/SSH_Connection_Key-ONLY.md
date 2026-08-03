@@ -30,6 +30,3 @@ creating envs for username and server_ip in client,
 vim ~/.bashrc*
 export env_name=username@server_ip
 ```
-
-**update_afterstage5**
-resetted to ssh to proxmox and in Linux VM

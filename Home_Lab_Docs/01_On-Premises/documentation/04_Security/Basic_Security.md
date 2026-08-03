@@ -1,4 +1,4 @@
-# Setting SSH Public connection only and non-root, Basic firewalls rules with ufw, and Fail2Ban to protect against brute force attacks
+# Setting SSH Public connection only and non-root, Basic firewalls rules with ufw, and Fail2Ban to protect against brute force attacks (OUTDATED)
 
 **step 1:**
 Set up *phase 1: 3_SSH_Connection_Key-ONLY.md* on both nodes, plus removed root login, and created a user "matteo" on both, to ssh into them.

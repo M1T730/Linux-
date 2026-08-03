@@ -20,3 +20,5 @@ Splunk was made with the purpose of being more familiar with it and learn it pro
 **plus:** 
 * made a dashboard using claude.
 * there was an app for the phone: Splunk mobile; could be enabled with a secure gateway, cool! (can use it withough vpn always on, very convinient)
+
+DECOMMISIONED; IT WAS REDUNDANT TO LOKI, it was deployed to learn it better but will be postponed indefinitely

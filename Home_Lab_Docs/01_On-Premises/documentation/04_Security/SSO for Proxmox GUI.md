@@ -21,3 +21,6 @@ job is set to activate every day at 21:00
 
 **step 4:**
 actually give Proxmox's permissions to groups/users of AD's users/groups 
+
+
+LAST EDIT : 3/08/2026

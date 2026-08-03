@@ -8,9 +8,9 @@ Create Datastore and setup right permissions, add PBS storage into the main Data
 
 **step 3:**
 Create backup jobs and enable pruning:
-backup jobs: every day at 3:00, backing up Tailscale Lxc for both nodes, Ubuntu VM in the first node and NAS in the first node
-Pruning: Last:7, Day: 7, Week: 4, Mounth: 3 (not much because I don't have a lot of storage)
-
-**step 4:**
-Set up Garbage collection and verify jobs weekly. 
+backup jobs: daily at 3:00 for ID: 100,101,102,105,200,300,600
+Pruning: daily at 00:00 (before backup to keep snapshots as long as possible within the day) 
+Last:7, Day: 7, Week: 4, Mounth: 3 (not much because I don't have a lot of storage)
+Garbege collection EveryDay at 5:00 (ensure backups is done)
+verify jobs weekly. 
 

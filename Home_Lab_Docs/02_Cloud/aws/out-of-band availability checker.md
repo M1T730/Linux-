@@ -29,7 +29,7 @@ passing though the token though stdin so its not visible in the commmand argumen
 (all can be found in the .../03_Automation/aws-LambdaCall.yml script)
 
 **LESSON:**
-for this specific use case, ouf of band availability monitoring, setting the period to 1 minute and doing 15 evaluation period  is better than setting period to 15 minutes and 1 evaluation period; why? because setting the period to 1 minute, guarantees me that the cloudwatch checks the metric every minute and once all 15 fails, it will take around 1 or 2 minute to send the email. With the setup period 15 minutes and 1 evaluatin period, I waited 50 MINTUES for the alarm to go off (bad timing from the metric ,yes, but I waited for the CloudWatch to update its status as well, and I remember, 50 minutes instead of 15, though Max 30 when I configured it..)
+for this specific use case, ouf of band availability monitoring, setting the period to 1 minute and doing 15 evaluation period is better than setting period to 15 minutes and 1 evaluation period; why? because setting the period to 1 minute, guarantees me that the cloudwatch checks the metric every minute and once all 15 fails, it will take around 1 or 2 minute to send the email. With the setup period 15 minutes and 1 evaluatin period, I waited 50 MINTUES for the alarm to go off (bad timing from the metric ,yes, but I waited for the CloudWatch to update its status as well, and I remember, 50 minutes instead of 15, though Max 30 when I configured it..)
 
 
 LAST EDIT : 1/08/2026
