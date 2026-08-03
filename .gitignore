@@ -1,3 +1,4 @@
-vars.yml
-.vscode/ 
-.gitignore
+vault.yml
+.vscode/
+.DS_Store
+.vscode/settings.json
