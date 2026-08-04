@@ -1,4 +1,4 @@
-# Splunk configuration, installation of Splunk Universal Forwarder and created a dashboard
+# Splunk configuration, installation of Splunk Universal Forwarder and created a dashboard (DEPRECATED, DECOMMISSIONED)
 
 
 **step 1:** 
