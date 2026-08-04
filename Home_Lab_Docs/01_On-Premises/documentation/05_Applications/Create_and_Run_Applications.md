@@ -3,7 +3,7 @@
 **Prerequisites:**
 having docker and docker compose 
 
-v1: just run Navidrome
+v1: just run Navidrome\
 v2: running Navidrome and Jellyfish as media server, both share the samba share
 
 **step 1:** 

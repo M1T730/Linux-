@@ -1,16 +1,16 @@
-Here is this HomeLab Im practicing everything I've learned and still learning. 
-This includes: 
-Linux
-Windows
-Virtualization
-Networking
-Cloud: AWS and AZURE
+Here is this HomeLab Im practicing everything I've learned and still learning.\
+This includes:\
+Linux\
+Windows\
+Virtualization\
+Networking\
+Cloud: AWS and AZURE\
 Automation
 
-I have divided the Documentation into 3 big categories: 
-*On Premises* 
-*Cloud*
-*Automation*
+I have divided the Documentation into 3 big categories:\
+*On Premises*\
+*Cloud*\
+*Automation*\
 + a bonus NetworkDiagram
 
 Each Major Directory has a README.md explaining the decisions, what the technologies are used for and the objective. 
