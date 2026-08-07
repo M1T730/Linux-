@@ -1,6 +1,6 @@
 ---
 - name: DNS update proxmox hosts
-  hosts: proxmoxs
+  hosts: all
   become: true
 
 

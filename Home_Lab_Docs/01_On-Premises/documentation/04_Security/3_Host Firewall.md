@@ -1,1 +1,0 @@
-# HOST FIREWALL with nftables
