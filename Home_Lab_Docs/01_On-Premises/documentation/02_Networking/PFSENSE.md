@@ -3,7 +3,7 @@
 PfSense is used as the default router by all hosts, it is a hosted internal router/firewall, its roles are: 
 * DHCP
 * Centralized VPN gateway
-* Internal Router 
+* Internal Router
 * Network Firewall
 
 DHCP, it is the DHCP server for the LAN, for VLAN 20, it used currently used for static mapping to the backup server (192.168.20.129), for VLAN 10, it's used for static mapping of various resources like Docker VM and Monitorging VM, and it has an address pool range from 192.168.10.240 to 192.168.10.254 (only 1 used for Windows VM 1).\
