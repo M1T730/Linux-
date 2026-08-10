@@ -206,20 +206,30 @@ Protocol: tcp\
 Source: 192.168.10.1\
 Source Port:\
 Destination: docker\
-Destination Port: 8920, 8123, 8096, 3001, 4533
+Destination Port: 80
 
 **getDNS:**
 rule 0-1:\
-Type: in and out\
+Type: in\
 Action: ACCEPT\
 Macro: DNS\
 Protocol:\
-Source:\
+Source: VLAN10 and VLAN20\
 Source Port:\
 Destination: AD\
 Destination Port:
 
-rule 2:\
+rule 2-3:\
+Type: out\
+Action: ACCEPT\
+Macro: DNS\
+Protocol:\
+Source: VLAN10 and VLAN20\
+Source Port:\
+Destination: AD\
+Destination Port:
+
+rule 4:\
 Type: in and out\
 Action: ACCEPT\
 Macro: DNS\
@@ -272,4 +282,4 @@ Source Port:\
 Destination: ML\
 Destination Port: 3100, 3000, 9090
 
-LAST EDIT : 9/08/2026
+LAST EDIT : 10/08/2026

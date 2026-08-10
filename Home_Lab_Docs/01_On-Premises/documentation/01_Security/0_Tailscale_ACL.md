@@ -19,7 +19,7 @@ VLAN 20 = 192.168.20.0/24
 *Clients to 192.168.10.3 APPLICATIONS*.\
 source: clients \
 dest: 192.168.10.3 \
-dest ports: tcp:4533, tcp:3001, tcp:8096, tcp:8128, tcp:8920 
+dest ports: 80
 
 *CLIENTS: SSH and PING to VLAN 10*\
 source: clients \
@@ -51,4 +51,9 @@ source: clients\
 dest: 192.168.10.130\
 dest ports: tcp:3000, tcp:3100, tcp:9090
 
-LAST EDIT : 7/08/2026
+*Clients to AD's DNS*
+source: clients\
+dest: 192.168.10.200\
+dest ports: tcp:53
+
+LAST EDIT : 10/08/2026
