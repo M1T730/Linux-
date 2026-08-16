@@ -262,7 +262,7 @@ Destination Port:
 
 **send logs to Loki Though Promtrail:**\
 rule 0-1:\
-Type: out\
+Type: in and out\
 Action: ACCEPT\
 Macro:\
 Protocol: tcp\
@@ -281,5 +281,16 @@ Source: 192.168.10.1\
 Source Port:\
 Destination: ML\
 Destination Port: 3100, 3000, 9090
+
+**Quorum between Proxmox hosts:**\
+rule 0-1:\
+Type: in and out\
+Action: ACCEPT\
+Macro:\
+Protocol: udp\
+Source: vlan20\
+Source Port: vlan20\
+Destination: ML\
+Destination Port: 5405:5412
 
 LAST EDIT : 10/08/2026

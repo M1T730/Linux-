@@ -6,6 +6,7 @@ made it into 2 files, because it would ve been to long.
 *order matters(both rules within SG and order of the SGs)*
 
 **node 1, node 2, node 3 and PBS:**\
+quorum (not pbs)
 proxmox_pbs_gui\
 prometheus\
 ssh\
