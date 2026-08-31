@@ -21,4 +21,5 @@
         - sudo 
         - ssh
         - unzip
-   
+        - net-tools
+        - chrony 

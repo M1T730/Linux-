@@ -56,4 +56,9 @@ source: clients\
 dest: 192.168.10.200\
 dest ports: tcp:53
 
-LAST EDIT : 10/08/2026
+*Clients to LAN10 RDP*
+source: clients\
+dest: VLAN10\
+dest ports: tcp:3389 tcp:3389
+
+LAST EDIT : 31/08/2026

@@ -260,6 +260,16 @@ Source Port:\
 Destination: \
 Destination Port:
 
+rule 4-5:\
+Type: in and out\
+Action: ACCEPT\
+Macro: Trcrt\
+Protocol:\
+Source: \
+Source Port:\
+Destination: \
+Destination Port:
+
 **send logs to Loki Though Promtrail:**\
 rule 0-1:\
 Type: in and out\
@@ -293,4 +303,15 @@ Source Port: vlan20\
 Destination: ML\
 Destination Port: 5405:5412
 
-LAST EDIT : 10/08/2026
+**rdp to ad**\
+rule 0-1:\
+Type: in and out\
+Action: ACCEPT\
+Macro: RDP\
+Protocol:\
+Source: 192.168.10.1\
+Source Port: \
+Destination: AD\
+Destination Port: 
+
+LAST EDIT : 31/08/2026

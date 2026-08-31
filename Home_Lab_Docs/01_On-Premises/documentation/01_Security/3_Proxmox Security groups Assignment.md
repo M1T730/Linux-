@@ -30,7 +30,8 @@ internet
 ping\
 get_dns\
 ad_auth\
-internet
+internet\
+rdp
 
 **NAS:**\
 smb\

@@ -1,0 +1,46 @@
+---
+- name: Configure NTP on Proxmox nodes
+  hosts: proxmoxs
+  become: true
+  tasks:
+    - name: Configure pfSense as NTP server
+      lineinfile:
+        path: /etc/chrony/chrony.conf
+        regexp: '^server\s+192\.168\.20\.1\b'
+        line: 'server 192.168.20.1 iburst'
+        state: present
+      notify: Restart chrony
+
+  handlers:
+    - name: Restart chrony
+      service:
+        name: chrony
+        state: restarted
+
+
+- name: Configure NTP on Linux servers
+  hosts: servers
+  become: true
+  tasks:
+    - name: Configure NTP server
+      lineinfile:
+        path: /etc/chrony/chrony.conf
+        regexp: '^server\s+192\.168\.10\.1\b'
+        line: 'server 192.168.10.1 iburst'
+        state: present
+      notify: Restart chrony
+
+  handlers:
+    - name: Restart chrony
+      service:
+        name: chrony
+        state: restarted
+
+- name: Set Italian timezone
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Set timezone to Europe/Rome
+      community.general.timezone:
+        name: Europe/Rome
