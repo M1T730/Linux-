@@ -1,0 +1,19 @@
+hosts:
+  nodes:
+    - "hostname" : "node1" 
+      "ip": "192.168.20.2"
+    - "hostname" : "node2" 
+      "ip": "192.168.20.3"
+    - "hostname" : "node3" 
+      "ip": "192.168.20.4"
+  servers:
+    - "hostname" : "ml"
+      "ip": "192.168.10.130" 
+    - "hostname" : "backup"
+      "ip": "192.168.20.129"
+    - "hostname" : "smb"
+      "ip": "192.168.10.2"
+    - "hostname" : "docker" 
+      "ip": "192.168.10.3"
+    - "hostname" : "ad" 
+      "ip": "192.168.10.200"

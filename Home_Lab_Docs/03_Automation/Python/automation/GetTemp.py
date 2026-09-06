@@ -14,11 +14,11 @@ for result in data['data']['result']:
     node = result['metric']['instance']
     temperature = result['value'][1]
     chip = result['metric']['chip']
-    if result['value'][1] is not None and float(result['value'][1]) > 80:
+    if temperature is not None and float(temperature) > 80:
         print(f"Warning: {node} {chip} temperature is {temperature}°C")
-    elif result['value'][1] is not None and float(result['value'][1]) > 70:
+    elif temperature is not None and float(temperature) > 70:
         print(f"Notice: {node} {chip} temperature is {temperature}°C")
-    elif result['value'][1] is not None and float(result['value'][1]) > 60:
+    elif temperature is not None and float(temperature) > 60:
         print(f"Info: {node} {chip} temperature is {temperature}°C")
-    elif result['value'][1] is not None and float(result['value'][1]) > 50:
+    elif temperature is not None and float(temperature) > 50:
         print(f"Debug: {node} temperature is {temperature}°C")
