@@ -8,6 +8,7 @@ These rules dictate all the traffic that is permitted IN and OUT of each VM/LXC 
 AD: 192.168.10.200 | Active Directory Domain Controller\
 ML: 192.168.10.130 | Monitoring VM\
 PBS: 192.168.20.129 | Proxmox Backup Server\
+PDM: 192.168.20.254 | Proxmox Datacenter Manager\
 VLAN10: 192.168.10.0/24 | VLAN 10\
 VLAN20: 192.168.20.0/24 | VLAN 20\
 docker 192.168.10.3 | Docker VM\
@@ -106,23 +107,23 @@ Destination Port: 8007
 
 **SAMBA:**\
 rule 0:\
-Type: out\
+Type: in\
 Action: ACCEPT\
-Macro:\
-Protocol: tcp\
-Source: docker\
-Source Port:\
-Destination: 192.168.10.2\
+Macro: tcp\
+Protocol:\
+Source: vlan10\
+Source Port: \
+Destination:vlan10\
 Destination Port: 445
 
 rule 1:\
-Type: out\
+Type: in\
 Action: ACCEPT\
-Macro:\
-Protocol:tcp\
-Source:docker\
-Source Port:\
-Destination: 192.168.10.2\
+Macro: tcp\
+Protocol:\
+Source: ad\
+Source Port: \
+Destination:vlan10\
 Destination Port: 445
 
 **VPN CLIENTS SSH into hosts:**\
@@ -156,7 +157,7 @@ Source Port:\
 Destination:\
 Destination Port:
 
-**access Proxmox GUI and PBS GUI:**\
+**access Proxmox GUI,  PBS GUI and PDM:**\
 rule 0-1:\
 Type: out\
 Action: ACCEPT\
@@ -196,6 +197,26 @@ Source: 192.168.20.1\
 Source Port:\
 Destination: node1, node2 and node3\
 Destination Port: 8006
+
+rule 8-9:\
+Type: in/out\
+Action: ACCEPT\
+Macro:\
+Protocol: tcp\
+Source: PDM\
+Source Port:\
+Destination: 192.168.20.0/29\
+Destination Port: 8006
+
+rule 10-11:\
+Type: in/out\
+Action: ACCEPT\
+Macro:\
+Protocol: tcp\
+Source: PDM\
+Source Port:\
+Destination: PBS\
+Destination Port: 8007
 
 **access to applications like navidrome ecc..:**\
 rule 0-4:\
@@ -299,8 +320,8 @@ Action: ACCEPT\
 Macro:\
 Protocol: udp\
 Source: vlan20\
-Source Port: vlan20\
-Destination: ML\
+Source Port: \
+Destination: vlan20\
 Destination Port: 5405:5412
 
 **rdp to ad**\
@@ -314,4 +335,16 @@ Source Port: \
 Destination: AD\
 Destination Port: 
 
-LAST EDIT : 31/08/2026
+**clients to pdm**\
+rule 0-1:\
+Type: in and out\
+Action: ACCEPT\
+Macro: tcp\
+Protocol:\
+Source: 192.168.20.1\
+Source Port: \
+Destination:pdm\
+Destination Port: 8443
+
+
+LAST EDIT : 11/09/2026

@@ -11,6 +11,8 @@ Proxmoxs = IPs of Proxmox hosts (192.168.20.x[2-4])\
 PFsense = IPs of PFsense interfaces (192.168.10.1;192.168.20.1;192.168.1.55)\
 VLAN 10 = 192.168.10.0/24\
 VLAN 20 = 192.168.20.0/24
+PDM = 192.168.20.254
+node4 = 192.168.20.5
 
 **TAILSCALE ACCESS CONTROL POLICIES RULES:**\
 *statefull rules*\
@@ -36,6 +38,11 @@ source: clients\
 dest: Proxmoxs\
 dest ports: tcp:8006 
 
+*Clients to PDM GUI*\
+source: clients\
+dest: PDM\
+dest ports: tcp:8443
+
 *Clients to Pfsense GUI*\
 source: clients\
 dest: PFsense\
@@ -57,8 +64,8 @@ dest: 192.168.10.200\
 dest ports: tcp:53
 
 *Clients to LAN10 RDP*
-source: clients\
-dest: VLAN10\
+source: pfsense\
+dest: VLAN10, node4\
 dest ports: tcp:3389 tcp:3389
 
-LAST EDIT : 31/08/2026
+LAST EDIT : 11/09/2026
