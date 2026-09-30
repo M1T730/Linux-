@@ -1,10 +1,3 @@
-**divide the docker vm** into like 4/5 lxcs for the applications, isolating each one instead of putting everything into a 
-docker vm and having multiple docker compose files.
-
-Pros: more isolation, failure isolation, resource optimization and granular control
-
-Cons: more operational complexity, migration itself
-
 
 **Install vaeem community edition** (remember 10 vms limit), and use it for vms, keeping pbs for lxcs for proxmox, using vaeem for the soleny advantage of cross-hypervisor backups.
 My objective is to have a proxmox cluster and a hyperV node running ad dc and windows workstations + veaam itself in it(node4)
@@ -33,4 +26,7 @@ cons: uses rdp instead of citrix protocol, lacking in windows integration, simil
 
 
 
-others: implement fully AD for applications, identity and user permissions; better log and metric life management; rething the use of resouces: cpu/storage and ram. implement cloud backups(free if possible) and automatic synchronication; Automatic generation of a Report(weekly)
+others: implement fully AD for applications, identity and user permissions; better log and metric life management; rethink the use of resouces: cpu/storage and ram. implement cloud backups(free if possible) and automatic synchronication; Automatic generation of a Report(weekly), modify the ips of PBS and PDM back to subnet 192.168.10.x and its correspective firewall rules, dns ecc...
+
+
+LAST EDIT : 30/09/2026
