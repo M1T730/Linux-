@@ -16,3 +16,8 @@
         path: /etc/resolv.conf
         regexp: '^nameserver'
         line: 'nameserver 192.168.10.200'
+
+    - name: namespace update
+      lineinfile:
+        path: /etc/resolv.conf
+        line: 'nameserver 192.168.10.201'

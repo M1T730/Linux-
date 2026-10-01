@@ -27,6 +27,7 @@ ml_api\
 internet
 
 **AD:**\
+smb\
 ping\
 get_dns\
 ad_auth\
@@ -52,4 +53,14 @@ get_dns\
 applications\
 internet
 
-LAST EDIT : 9/08/2026
+**PDM:**\
+proxmox_pbs_gui\
+ssh\
+ping\
+pdm\
+ad_auth\
+get_dns\
+internet
+
+
+LAST EDIT : 1/10/2026

@@ -2,12 +2,19 @@
 - name: Update and upgrade all packages on the system
   hosts: all
   become: true
+  serial: 1
 
-  tasks: 
-    - name: update and upgrade all packages on the system
-      apt:
+  tasks:
+    - name: Update package cache
+      ansible.builtin.apt:
         update_cache: true
-        upgrade: dist
+        cache_valid_time: 3600
+
+    - name: Upgrade packages with low system priority
+      ansible.builtin.command:
+        cmd: nice -n 10 ionice -c 3 apt-get -y dist-upgrade
+      environment:
+        DEBIAN_FRONTEND: noninteractive
 
 
 # runs Wednesday 20:00 in the macbook cronjob: 

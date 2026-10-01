@@ -5,7 +5,7 @@ These rules dictate all the traffic that is permitted IN and OUT of each VM/LXC 
 (I will not explain every SG, it would take too long)
 
 **ALIASES:**\
-AD: 192.168.10.200 | Active Directory Domain Controller\
+AD: 192.168.10.200/31 | Active Directory Domain Controllers\
 ML: 192.168.10.130 | Monitoring VM\
 PBS: 192.168.20.129 | Proxmox Backup Server\
 PDM: 192.168.20.254 | Proxmox Datacenter Manager\
@@ -43,22 +43,22 @@ Destination:\
 Destination Port:
 
 **AD auth:**\
-rule 0-3:\
+rule 0-4:\
 Type: in\
 Action: ACCEPT\
 Macro: LDAPS\
 Protocol:\
-Source: node1, node 2, node 3 and PBS\
+Source: node1, node 2, node 3, PBS and PDM\
 Source Port:\
 Destination:\
 Destination Port:
 
-rule 4-7:\
+rule 5-8:\
 Type: out\
 Action: ACCEPT\
 Macro: LDAPS\
 Protocol:\
-Source: node1, node 2, node 3 and PBS\
+Source: node1, node 2, node 3, PBS and PDM\
 Source Port:\
 Destination:\
 Destination Port:
@@ -117,11 +117,11 @@ Destination:vlan10\
 Destination Port: 445
 
 rule 1:\
-Type: in\
+Type: out\
 Action: ACCEPT\
 Macro: tcp\
 Protocol:\
-Source: ad\
+Source: vlan10\
 Source Port: \
 Destination:vlan10\
 Destination Port: 445
@@ -347,4 +347,4 @@ Destination:pdm\
 Destination Port: 8443
 
 
-LAST EDIT : 11/09/2026
+LAST EDIT : 1/10/2026

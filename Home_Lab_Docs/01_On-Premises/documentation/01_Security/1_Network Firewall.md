@@ -6,7 +6,8 @@ These rules are written to control the traffic in between VLANs, for example tra
 **ALIASES:**\
 InternalNetwork: 192.168.20.0/24, 192.168.10.0/24\
 Network: 192.168.20.0/24, 192.168.10.0/24, 192.168.1.0/24\
-Proxmoxs_and_PBS:  192.168.20.2, 192.168.20.3, 192.168.20.4, 192.168.20.129
+Proxmoxs_and_PBS:  192.168.20.2, 192.168.20.3, 192.168.20.4, 192.168.20.129, 192.168.20.254\
+ADs:  192.168.10.200, 192.168.10.201
 
 **pfSENSE Firewall RULES:**\
 *statefull rules*\
@@ -26,13 +27,13 @@ Destination Port: any
 *Proxmox + PBS hosts to Active Directory*\
 Protocol: IPv4 TCP\
 Source: Proxmoxs_and_PBS\
-Destination: 192.168.10.200\
+Destination: ADs\
 Destination Port: 636 (LDAPS)
 
 *Proxmox + PBS hosts to Active Directory DNS*\
 Protocol: IPv4 TCP/UDP\
 Source: Proxmoxs_and_PBS\
-Destination: 192.168.10.200\
+Destination: ADs\
 Destination Port: 53 (DNS)
 
 *Proxmox + PBS hosts to Loki*\
@@ -57,7 +58,7 @@ Destination Port: any
 
 *Active Directory DNS to ISP DNS*\
 Protocol: IPv4 TCP/UDP\
-Source: 192.168.10.200\
+Source: ADs\
 Destination: 192.168.1.1\
 Destination Port: 53 (DNS)
 
@@ -73,4 +74,4 @@ Source: VLAN10 subnets\
 Destination: ! Network\
 Destination Port: any
 
-LAST EDIT : 7/08/2026
+LAST EDIT : 1/10/2026
