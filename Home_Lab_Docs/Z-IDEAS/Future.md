@@ -6,8 +6,8 @@ there are 2 main processes: creation + configuration; there are many ways to imp
 * windows native solutions + GPOs 
 and many more...
 
-I choose to use Powershell with the HyperV module to create the VM initially, use unattented to automatically join the Windows VM to the domain then GPO will do the rest of the configuration. I choose this because it let me practice with Poweshell + GPOs, I could use ansible but I dont reallt need to force it everywhere. 
-The other solutions were discarded based on what I want and need to learn and no other criterias were involved. (to be honest i'm very interest in Intune But I will postpone it Until I make a Hybrid Entra + AD infra).
+I choose to use Powershell with the HyperV module to create the VM from a Golden Image, Powershell Direct to  automatically join the Windows VM to the domain then GPO will do the rest of the configuration. I choose this because it let me practice with Poweshell + GPOs, I could use ansible instead of Powershell Direct or GPOs but I dont really need to force it everywhere. 
+The other solutions were discarded based on what I want and need to learn and no other criterias were involved. (to be honest i'm very interest in Intune But I will postpone it Until I make a Hybrid Entra + AD infra for SSO).
 
 
 **Install vaeem community edition** (remember 10 vms limit), and use it for vms, keeping pbs for lxcs for proxmox, using vaeem for the soleny advantage of cross-hypervisor backups.
